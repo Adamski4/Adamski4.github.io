@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Main.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mörk"></div>
+    <div id="linje-container">
+        <div id="Mittlinje"></div>
+        <p id="mitt-text"> Webbutveckling 1 </p>
+        <p id="mitt-text2"> Adam Levin </p>
+    </div>
+    <div id="flex-container">
+        <div id="flexinnehåll1" href=""><p> Hem </p></div>
+        <div id="flexinnehåll2" onclick="LänderClick()"><p> Länder </p></div>
+        <div id="flexinnehåll3" href=""><p> --- </p></div>
+        <div id="logut" onclick="LogoutFunc()">
+            <div id="logutlogo"><i class="fa-regular fa-user fa-lg"></i></div>
+            <p id="loguttext"> Logga ut</p>
+        </div>
+        <div id="toggle" onclick="ToggleFunc()">
+            <div id="togglelogo"><i class="fa-regular fa-moon fa-lg"></i></div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://kit.fontawesome.com/5a2bfee0a1.js" crossorigin="anonymous"></script>
+    <script>
+    function LogoutFunc() {
+        document.location.href = "form.html";
+    }
+
+    function LänderClick() {
+        document.location.href = "Länder.html";
+    }
+
+    let toggle = true;
+
+    function ToggleFunc() {
+        if (toggle){
+            const element = document.querySelector('#flex-container');
+            const element2 = document.querySelector('#linje-container');
+            document.querySelector('#mörk').style.display = "block";
+            element.style.filter = "invert(100%)";
+            element2.style.filter = "invert(100%)";
+                // document.body.style.background.color = "white";
+            toggle = false;
+        } else{
+            const element = document.querySelector('#flex-container');
+            const element2 = document.querySelector('#linje-container');
+            document.querySelector('#mörk').style.display = "none";
+            element.style.filter = "invert(0%)";
+            element2.style.filter = "invert(0%)";
+            // document.body.style.background.color = "rgb(43, 43, 43)";
+            toggle = true;
+        }
+    }
+
+
+    
+    </script>
+</body>
+</html>

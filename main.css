@@ -1,0 +1,210 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    overflow-x: hidden;
+    font-family: impact, fantasy;
+    letter-spacing: 0.4px;
+    background-image: url("nature.jpg");
+    background-size: 100%;
+}
+
+#flex-container {
+    position: relative;
+    height: 60px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    width: 101.07%;
+    margin: -8px;
+    transition: background-color 0.5s ease-in-out;
+    z-index: 2;
+}
+  
+#flex-container::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
+}
+  
+#flex-container:hover::before {
+    width: 100%;
+}
+
+#flex-container:hover {
+    height: 60px;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    width: 101.07%;
+    margin: -8px;
+    /* border-bottom: rgb(255, 255, 255) solid 2px; */
+    cursor: pointer;
+}
+
+#flexinnehåll1 {
+    width: 100px;
+    height: 50px;
+    margin-left: 40px;
+    position: relative;
+    text-align: center;
+}
+
+#flexinnehåll1:hover {
+    width: 100px;
+    height: 50px;
+    margin-left: 40px;
+    position: relative;
+    text-align: center;
+    border-bottom: white solid 2px;
+}
+
+
+
+
+#flexinnehåll2 {
+    width: 100px;
+    height: 50px;
+    margin-left: 40px;
+    position: relative;
+    text-align: center;
+}
+
+
+
+
+#flexinnehåll2:hover {
+    width: 100px;
+    height: 50px;
+    margin-left: 40px;
+    position: relative;
+    text-align: center;
+    border-bottom: white solid 2px;
+}
+
+
+
+
+#flexinnehåll3 {
+    width: 100px;
+    height: 50px;
+    margin-left: 40px;
+    position: relative;
+    text-align: center;
+}
+
+
+
+
+#flexinnehåll3:hover {
+    width: 100px;
+    height: 50px;
+    margin-left: 40px;
+    position: relative;
+    text-align: center;
+    border-bottom: white solid 2px;
+}
+
+
+
+
+#logut {
+   height: 50px;
+   width: 100px;
+   text-align: center;
+   position: relative;
+   left: 950px;
+}
+
+
+
+
+#logut:hover {
+    border-bottom: white solid 2px;
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+}
+
+#logutlogo {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+}
+
+#loguttext {
+    position: relative;
+    left: 12px
+}
+
+
+#toggle {
+   height: 50px;
+   width: 100px;
+   text-align: center;
+   position: relative;
+   left: 700px;
+}
+
+#toggle:hover {
+    border-bottom: white solid 2px;
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+}
+
+#togglelogo {
+    position: absolute;
+    top: 15px;
+    left:43px;
+}
+
+#linje-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#Mittlinje {
+    background-color: white;
+    width: 800px;
+    height: 7px;
+    position: fixed;
+    transform: translate(-50%, -50%) skew(60deg);
+    left: 50%;
+    top: 50%;
+    border: rgb(239, 239, 239) 2px solid;
+}
+
+#mitt-text {
+    position: relative;
+    top: 283px;
+    font-size: 40px;
+}
+
+#mitt-text2 {
+    position: relative;
+    top: 260px;
+    font-size: 25px;
+}
+
+#mörk {
+    background-color: rgba(0,0,0,0.3);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    pointer-events: none;
+    display: none;
+}
