@@ -8,7 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="mörk"></div>
     <div id="linje-container">
         <div id="Mittlinje"></div>
         <p id="mitt-text"> Webbutveckling 1 </p>
@@ -40,30 +39,6 @@
         document.location.href = "Länder.html";
     }
 
-    let toggle = true;
-
-    function ToggleFunc() {
-        if (toggle){
-            const element = document.querySelector('#flex-container');
-            const element2 = document.querySelector('#linje-container');
-            document.querySelector('#mörk').style.display = "block";
-            element.style.filter = "invert(100%)";
-            element2.style.filter = "invert(100%)";
-                // document.body.style.background.color = "white";
-            toggle = false;
-        } else{
-            const element = document.querySelector('#flex-container');
-            const element2 = document.querySelector('#linje-container');
-            document.querySelector('#mörk').style.display = "none";
-            element.style.filter = "invert(0%)";
-            element2.style.filter = "invert(0%)";
-            // document.body.style.background.color = "rgb(43, 43, 43)";
-            toggle = true;
-        }
-    }
-
-
-    
     </script>
 </body>
 </html>
