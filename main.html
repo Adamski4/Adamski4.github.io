@@ -21,7 +21,7 @@
         <p id="ländertext"> Schackinfo </p>
         <div id="popupmeny" class="hidden">
             <ul id="ulmeny">
-                <li class="menygrej" onclick="schackRegler()">En passant</li>
+                <li class="menygrej" onclick="schackPassant()">En passant</li>
                 <li class="menygrej" onclick="schackRegler()">Regler</li>
             </ul>
         </div>
@@ -59,6 +59,14 @@
 
     function chessdle() {
         document.location.href = "chessdle.html";
+    }
+
+    function schackPassant() {
+        document.location.href = "enpassant.html";
+    }
+
+    function schackRegler() {
+        document.location.href = "regler.html";
     }
     </script>
 </body>

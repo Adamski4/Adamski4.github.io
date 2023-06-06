@@ -10,6 +10,9 @@
 </head>
 <body>
     <div id="wrapper" style="display: block;">
+        <div id="klar">
+            <p id="klarsvar"></p>
+        </div>
         <div id="spelmeny">
             <div id="header">
                 <p id="titel"> Ches<span id="färgad">s</span>dle </p>
@@ -23,7 +26,7 @@
                 <p class="menytext">Regler</p>
             </div>
             <div id="smrad3" onclick="tillbaka()"> 
-                <p class="menytext">Tillbaka</p>
+                <p class="menytext">Hem</p>
             </div>
         </div>
 
@@ -137,45 +140,43 @@
             </div>
         </div>
     </div>
-<script> 
+<script>
     function tillbaka() {
         document.location.href = "main.html";
     }
-    
+
     let ikonläge = true;
     let Sp_Array = ["Sp1", "Sp2", "Sp3", "Sp4", "Sp5"];
     let currentSp = "";
-
-    function ikonclick() {
-        if (ikonläge) { // om ikonen är i läge 1 ändras den till läge 2
-            document.getElementById('header').setAttribute("style","height:705px");
-            document.getElementById('ikon').setAttribute("style","display:block");
-            ikonläge = false;
-        }
-    }
     
-    function ikonclick2() { // om ikonen är i läge 2 ändras den till läge 1
-        document.getElementById('header').setAttribute("style","height:50px");
-        document.getElementById('ikon').setAttribute("style","display:none");
-        ikonläge = true;
-    }
+    function ikonclick() {
+  if (ikonläge) { // if the rule is in state 1, change it to state 2
+    document.getElementById('header').setAttribute("style", "height: 705px");
+    document.getElementById('ikon').setAttribute("style", "display: block");
+    ikonläge = false;
+  }
+}
+
+function ikonclick2() { // if the rule is in state 2, change it to state 1
+  document.getElementById('header').setAttribute("style", "height: 50px");
+  document.getElementById('ikon').setAttribute("style", "display: none");
+  ikonläge = true;
+}
+
 
     function SpelStart() {
         if (Sp_Array.length === 0) {
-            location.reload();
             Sp_Array = ["Sp1", "Sp2", "Sp3", "Sp4", "Sp5"];
             for (let id of Sp_Array) {
                 let div = document.getElementById(id);
                 div.style.display = "none";
                 div.innerHTML = div.innerHTML;
             }
-            document.getElementById('wrapper').querySelector('#spelmeny').style.display = "block";
-            currentSp = "";
         } else {
             const index = Math.floor(Math.random() * Sp_Array.length);
             const sp = Sp_Array[index];
             currentSp = sp;
-            document.getElementById('wrapper').querySelector('#' + sp).style.display = "block";
+            document.getElementById(sp).style.display = "block";
         }
     }
 
@@ -196,9 +197,6 @@
             if (Sp_Array.length > 0) {
                 SpelStart();
             } 
-            else {
-                document.getElementById('spelmeny').style.display = "block";
-            }
         } 
         else {
             alert("Fel Svar!!!!!");

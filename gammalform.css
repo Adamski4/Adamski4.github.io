@@ -68,8 +68,20 @@ input[type="submit"]:hover {
 }
 
 
-#glömtlös {
+#registerknapp {
+    background-color: rgb(53, 53, 53);
     color: white;
-    position: relative;
-    left: 475px;
+    border-radius: 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    margin-top: 30px;
+    width: 590px;
+    margin-left: 0px;
+    border: white solid 1.5px;
+}
+
+#registerformcss {
+    margin: 40px;
+    margin-left: 50px;
 }

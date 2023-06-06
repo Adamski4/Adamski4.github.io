@@ -4,16 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gammalform.css" type="text/css">
     <title>Document</title>
 </head>
 <body>
-    <button onclick="skript()"> </button>
-    <script> 
-    function skript() 
-    {
-        window.location = "form.html";
+    <div id="formdiv">
+        <form id="formcss" onsubmit="checkForm(event)">
+            <label for="fname">Användarnamn:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Lösenord:</label><br>
+            <input type="password" id="lname" name="lname"><br><br>
+            <input type="submit" value="Logga in">
+            <input id="registerknapp" type="button" value="Registrera" onclick="registrera()">
+        </form> 
+        <form id="registerformcss" style="display: none;">
+            <label for="register-username">Användarnamn:</label><br>
+            <input type="text" id="register-username" name="register-username"><br>
+            <label for="register-password">Lösenord:</label><br>
+            <input type="password" id="register-password" name="register-password"><br><br>
+            <input id="register-button" type="button" value="Registrera" onclick="registerUser()">
+        </form>           
+    </div>
+    <script>
+        function checkForm(event) {
+            event.preventDefault();
+            var username = document.getElementById("fname").value;
+            var password = document.getElementById("lname").value;
+            
+            var storedUser = localStorage.getItem(username);
+            if (storedUser) {
+                var user = JSON.parse(storedUser);
+                if (user.password === password) {
+                    window.location.replace("main.html");
+                } else {
+                    alert("Incorrect password");
+                }
+            } else {
+                alert("User not found");
+            }
+        }
 
-    } 
+        function registrera() {
+            document.getElementById("formcss").style.display = "none";
+            document.getElementById("registerformcss").style.display = "block";
+        }
+
+        function registerUser() {
+            var username = document.getElementById("register-username").value;
+            var password = document.getElementById("register-password").value;
+
+            var user = { username: username, password: password };
+            localStorage.setItem(username, JSON.stringify(user));
+
+            alert("Registration successful! You can now log in.");
+            document.getElementById("formcss").style.display = "block";
+            document.getElementById("registerformcss").style.display = "none";
+        }
     </script>
 </body>
 </html>

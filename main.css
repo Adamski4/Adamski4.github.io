@@ -2,16 +2,19 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
     overflow-x: hidden;
+    overflow-y: scroll;
     font-family: impact, fantasy;
     letter-spacing: 0.4px;
     background-image: url("nature.jpg");
-    background-size: 100%;
-}
+    background-size: 100%;}
+
+body#nobackground {
+    background-color: rgb(41, 41, 41);
+    background-image: none;}
 #wrapper-main {
     width: 100vw;
     height: 100vh;
-    justify-content: center;
-}
+    justify-content: center;}
 #flex-container {
     position: absolute;
     height: 60px;
@@ -24,8 +27,7 @@ body {
     transition: background-color 0.5s ease-in-out;
     z-index: 2;
     top:0px;
-    left: 0px;
-}
+    left: 0px;}
 #flex-container::before {
     content: "";
     position: absolute;
@@ -34,11 +36,9 @@ body {
     width: 0;
     height: 2px;
     background-color: white;
-    transition: width 0.3s ease-in-out;
-}
+    transition: width 0.3s ease-in-out;}
 #flex-container:hover::before {
-    width: 100vw;
-}
+    width: 100vw;}
 #flex-container:hover {
     height: 60px;
     background-color: rgba(0,0,0,0.5);
@@ -48,44 +48,39 @@ body {
     justify-content: left;
     width: 100vw;
     top:0px;
-    left: 0px;
-}
+    left: 0px;}
 #flexinnehåll1 {
     width: 100px;
     height: 50px;
     margin-left: 40px;
     position: relative;
-    text-align: center;
-}
+    text-align: center;}
 #flexinnehåll1:hover {
     width: 100px;
     height: 50px;
     margin-left: 40px;
     position: relative;
     text-align: center;
-    border-bottom: white solid 2px;
-}
+    border-bottom: white solid 2px;}
 #flexinnehåll2 {
     width: 100px;
     height: 50px;
     margin-left: 40px;
     position: relative;
-    text-align: center;
-}
+    text-align: center;}
 #flexinnehåll2:hover {
     width: 100px;
     height: 50px;
     margin-left: 40px;
     position: relative;
     text-align: center;
-}
+    border-bottom: white solid 2px;}
 #flexinnehåll3 {
     width: 100px;
     height: 50px;
     margin-left: 40px;
     position: relative;
-    text-align: center;
-}
+    text-align: center;}
 #flexinnehåll3:hover {
     width: 100px;
     height: 50px;
@@ -93,30 +88,25 @@ body {
     position: relative;
     text-align: center;
     border-bottom: white solid 2px;
-    cursor: pointer;
-}
+    cursor: pointer;}
 #logut {
    height: 50px;
    width: 100px;
    text-align: center;
    position: absolute;
-   left: 93vw;
-}
+   left: 93vw;}
 #logut:hover {
     border-bottom: white solid 2px;
     height: 50px;
     width: 100px;
-    cursor: pointer;
-}
+    cursor: pointer;}
 #logutlogo {
     position: absolute;
     top: 15px;
-    left: 10px;
-}
+    left: 10px;}
 #loguttext {
     position: relative;
-    left: 12px
-}
+    left: 12px}
 #linje-container {
     display: grid;
     grid-template-columns: auto;
@@ -128,9 +118,7 @@ body {
     margin-left: -500px;
     text-align: center;
     top: 50%;
-    margin-top: -100px;
-}
-
+    margin-top: -100px;}
 #Mittlinje {
     grid-row: 2/5;
     background-color: white;
@@ -140,18 +128,14 @@ body {
     transform: translate(-50%, -50%) skew(60deg);
     left: 50%;
     top: 50%;
-    border: rgb(239, 239, 239) 2px solid;
-}
-
+    border: rgb(239, 239, 239) 2px solid;}
 #mitt-text {
     grid-row: 1/5;
     position: absolute;
     font-size: 40px;
     width: 300px;
     left: 50%;
-    margin-left: -150px;
-}
-
+    margin-left: -150px;}
 #mitt-text2 {
     grid-row: 4/5;
     position: absolute;
@@ -159,8 +143,7 @@ body {
     width: 300px;
     left: 50%;
     margin-left: -150px;
-    bottom: -5px;
-}
+    bottom: -5px;}
 #popupmeny {
     position: relative;
     top: -2px;
@@ -171,16 +154,291 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     z-index: 1;
     border-top: 2px solid white; 
-    transition: height 0.3s ease-in-out;
-}
+    transition: height 0.3s ease-in-out;}
 .hidden {
-    display: none;
-}
+    display: none;}
 #ulmeny {
     margin-bottom: 12px;
-    list-style-type: square;
-}
+    list-style-type: square;}
 .menygrej {
     cursor: pointer;
-    margin-bottom: 10px;
+    margin-bottom: 10px;}
+#wrapper-enpassant {
+    width: 100vw;
+    height: 240vh;
+    background-color: rgb(41, 41, 41);
+    position: absolute;
+    top: 0px;
+    left: 0px;}
+.textruta {
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 30px;
+    width: 600px;
+    height: 300px;
+    position: relative;
+    word-spacing: 5px;
+    left: 50%;
+    margin-left: -300px;
+    top: 50%;
+    justify-content: center;}
+#wrapper-rules {
+    width: 1800px;
+    height: 2100px;
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px 300px 300px;
+    grid-template-rows: 300px 300px 300px 300px 300px 300px 300px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-left: -950px;}
+
+
+    @media (max-width: 1700px) {
+        #wrapper-rules {
+            width: 600px;
+            grid-template-columns: 300px;
+            grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+            left: 50%;
+            margin-left: -300px;
+            height: 3600px;
+        }
+    
+        #wrapper-enpassant {
+            width: 100vw;
+            height: 180vh;
+            background-color: rgb(41, 41, 41);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        #ttl {
+            grid-column: 1;
+            grid-row: 1; 
+            font-size: 35px;
+            width: 700px;
+            height: 1500px;
+            position: relative;
+            left: 10%;
+            text-align: center;
+        }
+    
+        #checkboard {
+            grid-column: 1;
+            grid-row: 2;
+            padding: 8px;
+            width: 585px;
+            height: 255px;
+            position: absolute;
+            word-spacing: 5px;
+            left: 50%;
+            margin-left: -400px;
+        }
+    
+        #king {
+            grid-column: 1;
+            grid-row: 3;
+            height: auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            font-size: 0.6vw;
+            top: 300px;
+            
+        }
+        #queen {
+            grid-column: 1;
+            grid-row: 4;
+            height: auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            top: 300px;
+        } 
+        
+        #rook {
+            grid-column: 1;
+            grid-row: 5;
+            height: auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            top: 300px;
+        }
+        
+        #bishop {
+            grid-column: 1;
+            grid-row: 6;
+            height: auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            top: 300px;
+        }
+        
+        #knight {
+            grid-column: 1;
+            grid-row: 7;
+            height: auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            top: 300px;
+        }
+        
+        #pawn {
+            grid-column: 1;
+            grid-row: 8;
+            height: auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            top: 300px;
+        }
+    
+        #infobox {
+            grid-column: 1;
+            height: auto;
+            position: relative;
+            text-align: center;
+            margin-top: 20px; 
+            top: 1500px;
+            left: 50%;
+            margin-left: -115px;
+        }
+
+        #logut {
+            position: relative;
+            left: 10px;
+        }
+    }
+#checkboard {
+    grid-column: 2;
+    grid-row: 1/7;
+    padding: 8px;
+    width: 585px;
+    height: 255px;
+    position: absolute;
+    word-spacing: 5px;
+}
+#king {
+    background-color: rgb(63,63,63);
+    grid-column: 5;
+    grid-row: 1/7;
+    padding: 8px;
+    font-size: 15px;
+    width: 600px;
+    height: 220px;
+    position: absolute;
+    word-spacing: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#queen{
+    background-color: rgb(63,63,63);
+    grid-column: 5;
+    grid-row: 2/7;
+    padding: 8px;
+    font-size: 15px;
+    width: 600px;
+    height: 220px;
+    position: absolute;
+    word-spacing: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#rook{
+    background-color: rgb(63,63,63);
+    grid-column: 5;
+    grid-row: 3/7;
+    padding: 8px;
+    font-size: 15px;
+    width: 600px;
+    height: 220px;
+    position: absolute;
+    word-spacing: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#bishop{
+    background-color: rgb(63,63,63);
+    grid-column: 5;
+    grid-row: 4/7;
+    padding: 8px;
+    font-size: 15px;
+    width: 600px;
+    height: 220px;
+    position: absolute;
+    word-spacing: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#knight{
+    background-color: rgb(63,63,63);
+    grid-column: 5;
+    grid-row: 5/7;
+    padding: 8px;
+    font-size: 15px;
+    width: 600px;
+    height: 220px;
+    position: absolute;
+    word-spacing: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#pawn{
+    background-color: rgb(63,63,63);background-color: rgb(63,63,63);
+    grid-column: 5;
+    grid-row: 6/7;
+    padding: 8px;
+    font-size: 15px;
+    width: 600px;
+    height: 220px;
+    position: absolute;
+    word-spacing: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#infobox {
+    background-color: rgb(63,63,63);
+    grid-column: 1;
+    grid-row: 2/8;
+    padding: 8px;
+    font-size: 19.8px;
+    width: 700px;
+    height: 1500px;
+    position: absolute;
+    word-spacing: 5px;
+    left: 10%;
+    text-align: center;
+}
+
+#ttl {
+    grid-column: 1;
+    grid-row: 1/8; 
+    font-size: 35px;
+    width: 700px;
+    height: 1500px;
+    position: absolute;
+    left: 10%;
+    top: 25%;
+    text-align: center;
+}
+
+.bildtext {
+    text-align: left;
+    padding-left:7px ;
 }

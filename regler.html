@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <title>Document</title>
+</head>
+<body id="nobackground">
+<div id="wrapper-enpassant">
+    </div>
+    <div id="flex-container">
+    <div id="flexinnehåll1"><p> Hem </p></div>
+    <div id="flexinnehåll2" onmouseenter="showMenu()" onmouseleave="hideMenu()">
+        <p> Schackinfo </p>
+        <div id="popupmeny" class="hidden">
+            <ul id="ulmeny">
+                <li class="menygrej" onclick="schackPassant()">En passant</li>
+                <li class="menygrej" onclick="schackRegler()">Regler</li>
+            </ul>
+        </div>
+    </div>
+        <div id="flexinnehåll3" onclick="chessdle()"><p> chessdle </p></div>
+        <div id="logut" onclick="LogoutFunc()">
+            <div id="logutlogo"><i class="fa-regular fa-user fa-lg"></i></div>
+            <p id="loguttext"> Logga ut</p>
+        </div>
+    </div>
+    
+    <div id="wrapper-rules">
+        <div id="infobox">
+            <p id="regeltitel"> REGLER </p>
+            <p>Både schackpjäser och ett schackbräde behövs för att kunna spela ett parti schack. Schackbrädet ska vara indelat i 64 vita respektive svarta rutor. Vardera spelare börjar med 16 pjäser, som är vita respektive svarta. Eventuellt används även en schackklocka för att begränsa betänketiden samt partiprotokoll till vardera spelare för att anteckna partiet för vidare studier. </p> 
+            <p>Varje fält på ett schackbräde betecknas med en unik kod bestående av en bokstav och ett nummer. Linjerna bokstaveras från a till h, från brädets damflygel. Raderna numreras från 1 till 8, från vits sida av brädet. Den vita kungen börjar till exempel på ruta e1. Den svarta springaren på ruta b8 kan flyttas till a6 eller c6. </p>
+            <p>Spelet går ut på att ställa motståndarens kung schackmatt. Detta innebär att man hotar motståndarens kung samtidigt som den inte kan undkomma hotet på något sätt, och då har man vunnit. Ett spel, fram till schackmatt, remi (oavgjort spel) eller uppgivelse, kallas ett parti. </p>
+            <p>Pjäsers rörelsebanor begränsas av likfärgade pjäser. Det går alltså inte att flytta en pjäs till en ruta där en annan likfärgad pjäs står. Det går dock att flytta en pjäs till en ruta där motståndarens pjäs står. Då slås motståndarens pjäs på den rutan, och tas bort ur spelet, varvid den nyligen flyttade pjäsen står kvar på rutan i fråga. För bönder gäller specialregler vid slag. </p>
+            <p>En spelare vars kung inte kan räddas förlorar partiet, och motståndaren vinner. Kungen sägs då vara schackmatt. Uttrycket kommer från persiskan, och betyder "kungen är död". En spelare kan när som helst under partiets gång ge upp frivilligt. Den som befinner sig i ett hopplöst underläge kan därför undvika sin förnedring genom att erkänna sig besegrad.En spelare vinner även partiet om motståndarens tid går ut. För att vinna på tid krävs innehav av mattsättande pjäser. </p>
+            <p>Ställningsupprepning är en situation som kan förekomma under ett parti schack. Endera spelare kan kräva remi om exakt samma ställning upprepas tre gånger under ett och samma parti (det ska även vara samma spelare vid draget varje gång ställningen upprepas). Vanligtvis sker detta när den ene spelaren kan utföra evig schackning.Det är inte ovanligt att en spelare offrar sin mest värdefulla pjäs för att uppnå dragupprepning genom evig schack</p>
+            <p>50-dragsregeln innebär att ett parti blir remi om det går 50 heldrag utan att en bonde förflyttas eller att en pjäs slås av endera spelare. Detta beror på att det är mycket osannolikt att det är möjligt att göra framsteg i ett parti om inte något slag eller bondedrag har skett under de senaste 50 dragen. </p>
+            <p>En spelare behöver mattsättande pjäser för att sätta motståndarens kung schackmatt. Om ingendera har mattsättande pjäser, är partiet remi. Mattsättande pjäser, är en relativ term som beror på den aktuella positionen. Brist på mattsättande pjäser, innebär alltid att det inte finns en laglig dragsekvens som leder till schackmatt. I de flesta positioner är termen entydig, särskilt när den ene spelaren har en ensam kung. Vanligen behövs en dam, ett torn, två löpare, en löpare och en springare eller en bonde (som kan promoveras till ovanstående) för att göra schackmatt. Kantbönder räknas endast om kungen är utom räckhåll. </p>
+            <p>Schackmatt kan emellertid uppstå utan dessa pjäser, om en av spelarna sätter bort sig (se ovanstående diagram till höger). Slutspel med två springare tillhör de tveksammare fallen där den aktuella uppsättningen av pjäser avgör huruvida vinst är möjlig inom 50 drag (se nedanstående diagram till höger).</p>
+            <p></p>
+        </div>
+        <div id="checkboard"> 
+            <img src="checkboard.png"> 
+            <p id="ttl"> SchackInfo</p>
+        </div>
+        <div id="king"> 
+            <img src="king.png"> 
+            <p>Kungen kan förflyttas åt alla riktningar, dock endast ett steg. Specialdraget rockad är ett undantag.
+
+                När kungen inte kan räddas från att bli slagen, är partiet slut (partiet avslutas innan kungen blir slagen). Vanligtvis är det förbjudet att ställa sin kung i slag. I sådant fall får spelaren ta tillbaka draget och göra ett annat drag. I snabbpartier, partier med kort betänketid, kan dock andra regler gälla. Det kan exempelvis vara tillåtet att påvisa att motståndarens kung står i slag, och därmed förlorar denne partiet. </p>
+        </div>
+        <div id="queen"> 
+            <img src="queen.png"> 
+            <p>Damen förflyttas antingen likt löparen valfritt antal rutor i diagonal riktning, eller likt tornet valfritt antal rutor i horisontell eller vertikal riktning. De många förflyttningsmöjligheterna gör damen till schackspelets värdefullaste pjäs.</p>
+        </div>
+        <div id="rook"> 
+            <img src="rook.png"> 
+            <p>Tornet förflyttas valfritt antal rutor rakt åt vänster eller höger, eller rakt framåt eller bakåt. Till skillnad från springaren, får tornen inte hoppa över andra pjäser, varken tillhörande det egna laget eller motståndarlaget, förutom vid specialdraget rockad. </p>
+        </div>
+        <div id="bishop"> 
+            <img src="bishop.png"> 
+            <p>Löparen kan flyttas diagonalt hur långt som helst. Vardera spelare har vid början av partiet en vitfältig löpare som endast kan förflytta sig på vita fält och en svartfältig löpare som endast kan förflytta sig på svarta fält.</p>
+        </div>
+        <div id="knight"> 
+            <img src="knight.png"> 
+            <p>Springaren kan flyttas två steg framåt och ett steg åt sidan i alla möjliga riktningar. Springaren är den enda pjäsen som kan hoppa över andra pjäser, både likfärgade och motståndarens. När en springare schackar motståndarens kung, kan denne inte ställa någon pjäs emellan springaren och sin kung. Antingen måste springaren slås, eller måste kungen flyttas. Till skillnad från bonden, ändras inte springarens rörelsemönster när den ska slå en pjäs. </p>
+        </div>
+        <div id="pawn"> 
+            <img src="pawn.png"> 
+            <p class="bildtext">Bonden förflyttas ett steg rakt framåt, förutom första draget på hela matchen, då den kan flyttas två steg framåt. Bonden kan inte slå motståndarens pjäser med dessa framåtriktade förflyttningar. Däremot kan bonden slå en pjäs som står diagonalt framför den, varvid den hamnar på denna ruta. När en bonde når den sista raden (motståndarens första rad) förvandlas den till vilken annan pjäs som helst, förutom kungen. Pjäsen kan inte heller förbli en bonde. Eftersom damen är starkast brukar schackspelare oftast välja den pjäsen. Denna förvandling kallas för promovering. </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <script src="https://kit.fontawesome.com/5a2bfee0a1.js" crossorigin="anonymous"></script>
+    <script>
+    function LogoutFunc() {
+        document.location.href = "form.html";
+    }
+
+    function LänderClick() {
+        document.location.href = "länder.html";
+    }
+
+    function showMenu() {
+        let popup = document.getElementById("popupmeny");
+        popup.classList.remove("hidden");
+    }
+
+    function hideMenu() {
+        let popup = document.getElementById("popupmeny");
+        popup.classList.add("hidden");
+    } 
+
+    function chessdle() {
+        document.location.href = "chessdle.html";
+    }
+
+    function schackPassant() {
+        document.location.href = "enpassant.html";
+    }
+
+    function schackRegler() {
+        document.location.href = "regler.html";
+    }
+
+
+    function ToggleFunc() {
+        if (toggle){
+            const element = document.querySelector('body');
+            element.style.filter = "invert(100%)";
+            document.body.style.backgroundColor = "white";
+            toggle = false;
+        } else{
+            const element = document.querySelector('body');
+            element.style.filter = "invert(0%)";
+            document.body.style.backgroundColor = "rgb(43, 43, 43)";
+            toggle = true;
+        }
+    }
+    </script>
+</body>
+</html>
