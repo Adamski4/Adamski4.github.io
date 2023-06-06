@@ -10,13 +10,22 @@
 <body>
     <div id="linje-container">
         <div id="Mittlinje"></div>
+        <div id="Osynligbox"></div>
         <p id="mitt-text"> Webbutveckling 1 </p>
         <p id="mitt-text2"> Adam Levin </p>
     </div>
     <div id="flex-container">
-        <div id="flexinnehåll1" href=""><p> Hem </p></div>
-        <div id="flexinnehåll2" onclick="LänderClick()"><p> Länder </p></div>
-        <div id="flexinnehåll3" href=""><p> --- </p></div>
+    <div id="flexinnehåll1" href=""><p> Hem </p></div>
+    <div id="flexinnehåll2" onmouseenter="showMenu()" onmouseleave="hideMenu()">
+        <p id="ländertext"> Schackinfo </p>
+        <div id="popupmeny" class="hidden">
+            <ul id="ulmeny">
+                <li class="menygrej" onclick="schackRegler()">En passant</li>
+                <li class="menygrej" onclick="schackRegler()">Regler</li>
+            </ul>
+        </div>
+    </div>
+        <div id="flexinnehåll3" onclick="chessdle()"><p> chessdle </p></div>
         <div id="logut" onclick="LogoutFunc()">
             <div id="logutlogo"><i class="fa-regular fa-user fa-lg"></i></div>
             <p id="loguttext"> Logga ut</p>
@@ -34,6 +43,20 @@
 
     function LänderClick() {
         document.location.href = "länder.html";
+    }
+
+    function showMenu() {
+        let popup = document.getElementById("popupmeny");
+        popup.classList.remove("hidden");
+    }
+
+    function hideMenu() {
+        let popup = document.getElementById("popupmeny");
+        popup.classList.add("hidden");
+    } 
+
+    function chessdle() {
+        document.location.href = "chessdle.html";
     }
     </script>
 </body>

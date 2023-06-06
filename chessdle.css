@@ -1,0 +1,213 @@
+body {
+    background-color: rgb(0, 0, 0);
+    font-family: impact, fantasy;
+    background-color: rgb(124, 124, 124);
+    background-image: url("chess.png");
+    background-repeat:no-repeat;
+    background-position-y: -20px;
+    background-size: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#spelmeny {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto;
+    width: 600px;
+    height: 705px;
+    background-color: rgba(41, 41, 41,0.8);
+    color: white;
+    font-size: medium;
+    margin: auto;
+    padding: 5px;
+    position: relative;
+    box-shadow: 0px 0px  15px #000000;
+    border-radius: 5px;
+    backdrop-filter: blur(20px);
+    grid-column: 2/3;
+    justify-content: center;
+}
+
+#header {
+    width: 600px;
+    height: 50px;
+    background-color: rgba(41, 41, 41);
+    color: white;
+    font-size: medium;
+    margin: auto;
+    position: relative;
+    box-shadow: 0px 0px  15px #000000;
+    border-radius: 5px;
+    bottom: 30px;
+    letter-spacing: 2px;
+    grid-column: 1;
+    grid-row: 1;
+    top: -20px;
+}
+
+
+#mapp {
+    width: 200px;
+    border: 3px solid rgb(68, 68, 68);
+    position: absolute;
+    display: block;
+    left: 50%;
+    margin-left: -100px;
+    grid-row: 2/11;
+}
+
+#mapp:hover {
+    transform: scale(1.5);
+}
+
+#färgad {
+    color:rgb(0, 203, 0);
+}
+
+#ikon {
+    position: relative;
+    left: 550px;
+    bottom: 44px;
+    display: none;
+}
+
+#ikon:hover {
+    position: relative;
+    left: 550px;
+    bottom: 44px;
+    cursor: pointer;
+}
+
+.menytext {
+    position: relative;
+    font-size: 25px;
+    text-align: center;
+    bottom: 18px;
+}
+
+#titel {
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    bottom: 24px;
+}
+
+#SpBild {
+    position: relative;
+    width: 49%;
+    height: 49%;
+    bottom: 723px;
+    left: 25%;
+    max-width: 100%;
+}
+
+.fråga {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 1000px;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-color: rgba(48, 48, 48, 0.7);
+    width: 300px;
+    height: 200px;
+    padding-bottom: 30px;
+    left: 40px;
+  }
+  
+  label {
+    position: relative;
+    top: 15px;
+    margin: 30px;
+  }
+
+  input {
+    position: relative;
+    margin: 40px;
+    bottom: 5px;
+  }
+
+  .button1 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 55px;
+  }
+
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+  }
+
+  #wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media only screen and (max-width: 900px) {
+    #wrapper {
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+}
+
+#FelSvar {
+    background-color: red;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: none;
+    width: auto;
+    height: auto;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    text-align: center; /* Center the inner text */
+}
+
+#smrad1, #smrad2, #smrad3 {
+    background-color: rgb(55, 55, 55);
+    position: absolute;
+    height: 45px;
+    width: 250px;
+    margin: auto;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    justify-content: center;
+    margin-left: -125px;
+    left: 50%;
+}
+
+#smrad1:hover, #smrad2:hover, #smrad3:hover {
+    background-color: rgb(55, 55, 55);
+    position: absolute;
+    height: 45px;
+    width: 250px;
+    margin: auto;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    justify-content: center;
+    cursor: pointer;
+    margin-left: -125px;
+    left: 50%;
+}
+
+#smrad1 {
+    grid-row: 7/11;
+}
+
+#smrad2 {
+    grid-row: 8/11;
+}
+
+#smrad3 {
+    grid-row: 9/11;
+}

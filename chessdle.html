@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="chessdle.css">
+    <script src="https://kit.fontawesome.com/5a2bfee0a1.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper" style="display: block;">
+        <div id="spelmeny">
+            <div id="header">
+                <p id="titel"> Ches<span id="färgad">s</span>dle </p>
+                <i id="ikon" class="fa-solid fa-x fa-lg" onclick="ikonclick2()"></i>
+            </div>
+            <img id="mapp" src="chess2.JPG"></img>
+            <div id="smrad1">
+                <p class="menytext" onclick="SpelStart()">Start</p>
+            </div>
+            <div id="smrad2" onclick="ikonclick()">
+                <p class="menytext">Regler</p>
+            </div>
+            <div id="smrad3" onclick="tillbaka()"> 
+                <p class="menytext">Tillbaka</p>
+            </div>
+        </div>
+
+        <div id="FelSvar" style="display: none;">
+            <p> Fel svar! </p>
+        </div>
+
+        <div id="Sp1" style="display: none;"> 
+            <img id="SpBild" src="Qa8andNe6.JPG"></img>
+            <div class="frågeruta">
+                <form class="fråga">
+                    <div><p> White To Move</p></div>
+                    <div class="rad1">
+                        <label >Qa8</label>
+                        <label >Ne6</label>
+                        <label >Qg7</label>
+                    </div>
+                    <div class="rad2">
+                        <input type="radio" class="radio" name="svar" value="correct">
+                        <input type="radio" class="radio" name="svar" value="false">
+                        <input type="radio" class="radio" name="svar" value="false">
+                    </div>
+                    <div class="rad3">
+                        <input type="button" class="button1" value="Submit" onclick="tillNästa('Sp1')">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="Sp2" style="display: none;"> 
+            <img id="SpBild" src="Qd8(2).JPG"></img>
+            <div class="frågeruta">
+                <form class="fråga">
+                    <div><p> White To Move</p></div>
+                    <div class="rad1">
+                        <label >Qf7</label>
+                        <label >Qc8</label>
+                        <label >Qd8</label>
+                    </div>
+                    <div class="rad2">
+                        <input type="radio" class="radio" name="svar" value="false">
+                        <input type="radio" class="radio" name="svar" value="false">
+                        <input type="radio" class="radio" name="svar" value="correct">
+                    </div>
+                    <div class="rad3">
+                        <input type="button" class="button1" value="Submit" onclick="tillNästa('Sp2')">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="Sp3" style="display: none;"> 
+            <img id="SpBild" src="Qd8.JPG"></img>
+            <div class="frågeruta">
+                <form class="fråga">
+                    <div><p> White To Move</p></div>
+                    <div class="rad1">
+                        <label >Qxf7</label>
+                        <label >Qd8</label>
+                        <label >E8=Q</label>
+                    </div>
+                    <div class="rad2">
+                        <input type="radio" class="radio" name="svar" value="false">
+                        <input type="radio" class="radio" name="svar" value="correct">
+                        <input type="radio" class="radio" name="svar" value="false">
+                    </div>
+                    <div class="rad3">
+                        <input type="button" class="button1" value="Submit" onclick="tillNästa('Sp3')">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="Sp4" style="display: none;"> 
+            <img id="SpBild" src="Qd3.JPG"></img>
+            <div class="frågeruta">
+                <form class="fråga">
+                    <div><p> Black To Move</p></div>
+                    <div class="rad1">
+                        <label >Bh3</label>
+                        <label >Qd3</label>
+                        <label >Qa2</label>
+                    </div>
+                    <div class="rad2">
+                        <input type="radio" class="radio" name="svar" value="false">
+                        <input type="radio" class="radio" name="svar" value="correct">
+                        <input type="radio" class="radio" name="svar" value="false">
+                    </div>
+                    <div class="rad3">
+                        <input type="button" class="button1" value="Submit" onclick="tillNästa('Sp4')">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="Sp5" style="display: none;"> 
+            <img id="SpBild" src="Qf2.JPG"></img>
+            <div class="frågeruta">
+                <form class="fråga">
+                    <div><p> Black To Move</p></div>
+                    <div class="rad1">
+                        <label >Qf1</label>
+                        <label >Nxd5</label>
+                        <label >Qf2</label>
+                    </div>
+                    <div class="rad2">
+                        <input type="radio" class="radio" name="svar" value="false">
+                        <input type="radio" class="radio" name="svar" value="false">
+                        <input type="radio" class="radio" name="svar" value="correct">
+                    </div>
+                    <div class="rad3">
+                        <input type="button" class="button1" value="Submit" onclick="tillNästa('Sp5')">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<script> 
+    function tillbaka() {
+        document.location.href = "main.html";
+    }
+    
+    let ikonläge = true;
+    let Sp_Array = ["Sp1", "Sp2", "Sp3", "Sp4", "Sp5"];
+    let currentSp = "";
+
+    function ikonclick() {
+        if (ikonläge) { // om ikonen är i läge 1 ändras den till läge 2
+            document.getElementById('header').setAttribute("style","height:705px");
+            document.getElementById('ikon').setAttribute("style","display:block");
+            ikonläge = false;
+        }
+    }
+    
+    function ikonclick2() { // om ikonen är i läge 2 ändras den till läge 1
+        document.getElementById('header').setAttribute("style","height:50px");
+        document.getElementById('ikon').setAttribute("style","display:none");
+        ikonläge = true;
+    }
+
+    function SpelStart() {
+        if (Sp_Array.length === 0) {
+            location.reload();
+            Sp_Array = ["Sp1", "Sp2", "Sp3", "Sp4", "Sp5"];
+            for (let id of Sp_Array) {
+                let div = document.getElementById(id);
+                div.style.display = "none";
+                div.innerHTML = div.innerHTML;
+            }
+            document.getElementById('wrapper').querySelector('#spelmeny').style.display = "block";
+            currentSp = "";
+        } else {
+            const index = Math.floor(Math.random() * Sp_Array.length);
+            const sp = Sp_Array[index];
+            currentSp = sp;
+            document.getElementById('wrapper').querySelector('#' + sp).style.display = "block";
+        }
+    }
+
+    function tillNästa(sp) {
+        const selectedRadio = document.querySelector('input[name="svar"]:checked');
+        if (selectedRadio === null) {
+            alert("Välj ett Svar!!!!!");
+            return;
+        }
+
+        const selectedValue = selectedRadio.value;
+        if (selectedValue === "correct" && sp === currentSp) {
+            document.getElementById(sp).style.display = "none";
+            const index = Sp_Array.indexOf(sp);
+            if (index !== -1) {
+                Sp_Array.splice(index, 1);
+            }
+            if (Sp_Array.length > 0) {
+                SpelStart();
+            } 
+            else {
+                document.getElementById('spelmeny').style.display = "block";
+            }
+        } 
+        else {
+            alert("Fel Svar!!!!!");
+        }
+        selectedRadio.checked = false;
+    }
+
+    function checkScreenWidth() {
+        if (window.matchMedia('(max-width: 1500px)').matches) {
+            document.body.style.backgroundImage = 'none';
+        }
+        else {
+            document.body.style.backgroundImage = 'url("chess.png")';
+        }
+    }
+
+    checkScreenWidth();
+    window.addEventListener('resize', checkScreenWidth);
+
+</script>
+</body>
+</html>

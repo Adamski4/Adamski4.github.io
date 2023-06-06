@@ -46,8 +46,6 @@ body {
     justify-content: left;
     width: 101.07%;
     margin: -8px;
-    /* border-bottom: rgb(255, 255, 255) solid 2px; */
-    cursor: pointer;
 }
 
 #flexinnehåll1 {
@@ -87,7 +85,6 @@ body {
     margin-left: 40px;
     position: relative;
     text-align: center;
-    border-bottom: white solid 2px;
 }
 
 
@@ -111,6 +108,7 @@ body {
     position: relative;
     text-align: center;
     border-bottom: white solid 2px;
+    cursor: pointer;
 }
 
 
@@ -165,12 +163,41 @@ body {
 
 #mitt-text {
     position: relative;
-    top: 283px;
+    top: 265px;
     font-size: 40px;
+    z-index: 9999;
 }
 
 #mitt-text2 {
     position: relative;
-    top: 260px;
+    top: 250px;
     font-size: 25px;
+    z-index: 9999;
+}
+
+#popupmeny {
+    position: relative;
+    top: -2px;
+    right: 35px;
+    width: 170px;
+    height: 220px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 1;
+    border-top: 2px solid white; 
+    transition: height 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+#ulmeny {
+    margin-bottom: 12px;
+    list-style-type: square;
+}
+
+.menygrej {
+    cursor: pointer;
+    margin-bottom: 10px;
 }
