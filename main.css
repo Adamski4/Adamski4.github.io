@@ -7,21 +7,25 @@ body {
     background-image: url("nature.jpg");
     background-size: 100%;
 }
-
+#wrapper-main {
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
 #flex-container {
-    position: relative;
+    position: absolute;
     height: 60px;
     background-color: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: left;
-    width: 101.07%;
-    margin: -8px;
+    width: 100vw;
     transition: background-color 0.5s ease-in-out;
     z-index: 2;
+    top:0px;
+    left: 0px;
 }
-  
 #flex-container::before {
     content: "";
     position: absolute;
@@ -32,11 +36,9 @@ body {
     background-color: white;
     transition: width 0.3s ease-in-out;
 }
-  
 #flex-container:hover::before {
-    width: 100%;
+    width: 100vw;
 }
-
 #flex-container:hover {
     height: 60px;
     background-color: rgba(0,0,0,0.5);
@@ -44,10 +46,10 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: left;
-    width: 101.07%;
-    margin: -8px;
+    width: 100vw;
+    top:0px;
+    left: 0px;
 }
-
 #flexinnehåll1 {
     width: 100px;
     height: 50px;
@@ -55,7 +57,6 @@ body {
     position: relative;
     text-align: center;
 }
-
 #flexinnehåll1:hover {
     width: 100px;
     height: 50px;
@@ -64,10 +65,6 @@ body {
     text-align: center;
     border-bottom: white solid 2px;
 }
-
-
-
-
 #flexinnehåll2 {
     width: 100px;
     height: 50px;
@@ -75,10 +72,6 @@ body {
     position: relative;
     text-align: center;
 }
-
-
-
-
 #flexinnehåll2:hover {
     width: 100px;
     height: 50px;
@@ -86,10 +79,6 @@ body {
     position: relative;
     text-align: center;
 }
-
-
-
-
 #flexinnehåll3 {
     width: 100px;
     height: 50px;
@@ -97,10 +86,6 @@ body {
     position: relative;
     text-align: center;
 }
-
-
-
-
 #flexinnehåll3:hover {
     width: 100px;
     height: 50px;
@@ -110,51 +95,48 @@ body {
     border-bottom: white solid 2px;
     cursor: pointer;
 }
-
-
-
-
 #logut {
    height: 50px;
    width: 100px;
    text-align: center;
-   position: relative;
-   left: 950px;
+   position: absolute;
+   left: 93vw;
 }
-
-
-
-
 #logut:hover {
     border-bottom: white solid 2px;
     height: 50px;
     width: 100px;
     cursor: pointer;
 }
-
 #logutlogo {
     position: absolute;
     top: 15px;
     left: 10px;
 }
-
 #loguttext {
     position: relative;
     left: 12px
 }
-
 #linje-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 40px 40px 40px 40px 40px;
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 1000px;
+    height: 200px;
+    left: 50%;
+    margin-left: -500px;
     text-align: center;
+    top: 50%;
+    margin-top: -100px;
 }
 
 #Mittlinje {
+    grid-row: 2/5;
     background-color: white;
     width: 800px;
     height: 7px;
-    position: fixed;
+    position: absolute;
     transform: translate(-50%, -50%) skew(60deg);
     left: 50%;
     top: 50%;
@@ -162,19 +144,23 @@ body {
 }
 
 #mitt-text {
-    position: relative;
-    top: 265px;
+    grid-row: 1/5;
+    position: absolute;
     font-size: 40px;
-    z-index: 9999;
+    width: 300px;
+    left: 50%;
+    margin-left: -150px;
 }
 
 #mitt-text2 {
-    position: relative;
-    top: 250px;
+    grid-row: 4/5;
+    position: absolute;
     font-size: 25px;
-    z-index: 9999;
+    width: 300px;
+    left: 50%;
+    margin-left: -150px;
+    bottom: -5px;
 }
-
 #popupmeny {
     position: relative;
     top: -2px;
@@ -187,16 +173,13 @@ body {
     border-top: 2px solid white; 
     transition: height 0.3s ease-in-out;
 }
-
 .hidden {
     display: none;
 }
-
 #ulmeny {
     margin-bottom: 12px;
     list-style-type: square;
 }
-
 .menygrej {
     cursor: pointer;
     margin-bottom: 10px;
