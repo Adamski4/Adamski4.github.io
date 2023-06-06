@@ -17,6 +17,7 @@
             <div id="header">
                 <p id="titel"> Ches<span id="färgad">s</span>dle </p>
                 <i id="ikon" class="fa-solid fa-x fa-lg" onclick="ikonclick2()"></i>
+                <p id="texttest" style="display: none;"> Om det står "White To Move" så är det vitas drag, alltså ska du klicka i rätt svar och sedan "submit". <br><br><br> Målet är att hitta bästa draget eller få schack matt. <br><br><br> Du kan gissa hur många gånger du vill.</p>
             </div>
             <img id="mapp" src="chess2.JPG"></img>
             <div id="smrad1">
@@ -153,6 +154,7 @@
   if (ikonläge) { // if the rule is in state 1, change it to state 2
     document.getElementById('header').setAttribute("style", "height: 705px");
     document.getElementById('ikon').setAttribute("style", "display: block");
+    document.getElementById('texttest').setAttribute("style", "display: block");
     ikonläge = false;
   }
 }
@@ -160,6 +162,7 @@
 function ikonclick2() { // if the rule is in state 2, change it to state 1
   document.getElementById('header').setAttribute("style", "height: 50px");
   document.getElementById('ikon').setAttribute("style", "display: none");
+  document.getElementById('texttest').setAttribute("style", "display: none");
   ikonläge = true;
 }
 

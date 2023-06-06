@@ -77,8 +77,8 @@ body {
 #ikon {
     position: relative;
     left: 93%;
-    bottom: 25px;
-    display: block; 
+    bottom: 65px;
+    display: none; 
     z-index: 99999999999999;
 }
 #ikon:hover {
